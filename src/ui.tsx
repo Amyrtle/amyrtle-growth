@@ -1,0 +1,16 @@
+import { useCallback, useEffect, useState, createContext, useContext, type ReactNode } from 'react';
+import { AlertCircle, Check, LoaderCircle, Sprout, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { api, statusLabels } from './api';
+export function useLoad<T>(path:string){const [data,setData]=useState<T|null>(null);const [error,setError]=useState('');const reload=useCallback(async()=>{try{const d=await api<T>(path);setData(d);setError('');return d;}catch(e){setError((e as Error).message);return null;}},[path]);useEffect(()=>{void reload();},[reload]);return {data,error,reload,setData};}
+const NoticeContext=createContext<(message:string,error?:boolean)=>void>(()=>{});
+export function Notices({children}:{children:ReactNode}){const [notice,setNotice]=useState<{message:string;error:boolean}|null>(null);useEffect(()=>{if(notice){const id=setTimeout(()=>setNotice(null),6500);return()=>clearTimeout(id);}},[notice]);return <NoticeContext.Provider value={(message,error=false)=>setNotice({message,error})}>{children}{notice&&<div role={notice.error?'alert':'status'} className={'toast '+(notice.error?'error':'')}><span>{notice.error?<AlertCircle size={18}/>:<Check size={18}/>}</span>{notice.message}<button aria-label="关闭提示" onClick={()=>setNotice(null)}><X size={16}/></button></div>}</NoticeContext.Provider>;}
+export function useAction(){const notify=useContext(NoticeContext);const [busy,setBusy]=useState(false);const run=async(fn:()=>Promise<unknown>,success?:string)=>{if(busy)return;setBusy(true);try{await fn();if(success)notify(success);}catch(e){notify((e as Error).message,true);}finally{setBusy(false);}};return {run,busy,notify};}
+export function Brand({light=false}:{light?:boolean}){return <Link to="/" className={'brand '+(light?'light':'')}><span className="brand-mark"><Sprout size={23}/></span><span>Amyrtle<span className="brand-sub">GROWTH</span></span></Link>;}
+export function Loading(){return <div className="loading" role="status"><LoaderCircle className="spin" size={24}/> 正在准备你的工作台…</div>;}
+export function ErrorPanel({message,retry}:{message:string;retry?:()=>void}){return <div role="alert" className="error-panel"><AlertCircle size={24}/><p>{message}</p>{retry&&<button className="btn secondary" onClick={retry}>重新加载</button>}</div>;}
+export function Badge({status}:{status:string}){return <span className={'badge '+status}><i/>{statusLabels[status]||status}</span>;}
+export function Empty({title,description,action}:{title:string;description:string;action?:ReactNode}){return <div className="empty"><Sprout size={32}/><h3>{title}</h3><p>{description}</p>{action}</div>;}
+export function PageHeading({eyebrow,title,description,action}:{eyebrow:string;title:string;description:string;action?:ReactNode}){return <div className="page-heading"><div><div className="eyebrow">{eyebrow}</div><h1>{title}</h1><p>{description}</p></div>{action}</div>;}
+export function Field({label,children,hint}:{label:string;children:ReactNode;hint?:string}){return <label className="field"><span>{label}</span>{children}{hint&&<small>{hint}</small>}</label>;}
+export async function copyText(value:string){if(navigator.clipboard)await navigator.clipboard.writeText(value);else throw new Error('浏览器不支持自动复制，请手动选择并复制链接');}
