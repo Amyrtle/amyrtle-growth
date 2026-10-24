@@ -1,0 +1,50 @@
+{
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "win32"
+  },
+  "results": [
+    {
+      "command": "npm run typecheck",
+      "startedAt": "2026-10-24T15:20:07.909Z",
+      "durationMs": 2660,
+      "exitCode": 0,
+      "log": "docs/test-logs/typecheck.log"
+    },
+    {
+      "command": "npm run lint",
+      "startedAt": "2026-10-24T15:20:10.570Z",
+      "durationMs": 1686,
+      "exitCode": 0,
+      "log": "docs/test-logs/lint.log"
+    },
+    {
+      "command": "npm run test",
+      "startedAt": "2026-10-24T15:20:12.257Z",
+      "durationMs": 4593,
+      "exitCode": 0,
+      "log": "docs/test-logs/test.log"
+    },
+    {
+      "command": "npm run build",
+      "startedAt": "2026-10-24T15:20:16.851Z",
+      "durationMs": 3218,
+      "exitCode": 0,
+      "log": "docs/test-logs/build.log"
+    },
+    {
+      "command": "npm run test:e2e",
+      "startedAt": "2026-10-24T15:20:20.070Z",
+      "durationMs": 15919,
+      "exitCode": 0,
+      "log": "docs/test-logs/test-e2e.log"
+    },
+    {
+      "command": "npm run test:ops",
+      "startedAt": "2026-10-24T15:20:35.990Z",
+      "durationMs": 3241,
+      "exitCode": 0,
+      "log": "docs/test-logs/test-ops.log"
+    }
+  ]
+}

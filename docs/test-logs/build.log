@@ -1,0 +1,13 @@
+
+> amyrtle-growth@0.1.0 build
+> vite build
+
+vite v6.4.5 building for production...
+transforming...
+✓ 1646 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.58 kB │ gzip:   0.45 kB
+dist/assets/index-CUZxwWPE.css   57.57 kB │ gzip:  13.40 kB
+dist/assets/index-CMzOoBjH.js   371.76 kB │ gzip: 118.79 kB
+✓ built in 2.29s

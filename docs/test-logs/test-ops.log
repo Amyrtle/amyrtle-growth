@@ -1,0 +1,18 @@
+
+> amyrtle-growth@0.1.0 test:ops
+> tsx scripts/rehearse.ts
+
+{
+  "status": "passed",
+  "time": "2026-10-24T15:20:39.176Z",
+  "checks": [
+    "release A served and hash verified",
+    "online SQLite backup created",
+    "release B served and test mutation persisted",
+    "release A restored and exact HTML hash matched",
+    "database snapshot restored, integrity_check and foreign_key_check passed",
+    "restored owner login and original shop verified"
+  ],
+  "scope": "Local Node/SQLite same-schema release and database rollback; no cloud environment touched",
+  "recoveryWindow": "Changes after the backup are discarded in this snapshot recovery drill"
+}

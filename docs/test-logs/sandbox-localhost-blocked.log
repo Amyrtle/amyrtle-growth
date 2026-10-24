@@ -1,0 +1,189 @@
+
+> amyrtle-growth@0.1.0 test
+> tsx --test tests/*.test.ts
+
+✖ T01/T02: auth, tenant isolation on reads/writes/exports and staff permissions (206.4938ms)
+✖ T03/T04: draft and paused links hidden; review required; AI never modifies campaign (160.5184ms)
+✖ T05/T06/T11: final capacity concurrency, idempotency, cancellation and exact events (157.9852ms)
+✖ T07/T08: coupon idempotency, per-browser quota, concurrent redemption and audit (139.317ms)
+✖ total coupon limit and expired/paused campaigns reject new actions (141.6156ms)
+✖ T09: validation, consent, extra tenant injection and body limits (147.5314ms)
+✖ T10: unavailable AI keeps manual creation and reviewed publication working (141.3315ms)
+✖ T12: privacy credentials authorize only subject data; deletion frees capacity (140.5294ms)
+✔ T14: consistent SQLite backup recovers data and integrity after mutation (151.8132ms)
+✖ share attribution and deduplication preserve unknown sources (136.0444ms)
+✖ session CSRF and brute-force protection reject unsafe operations (141.1406ms)
+✖ asset uploads enforce owner, file validity, rights, CSRF and tenant ownership (136.5589ms)
+✖ independent API processes share database capacity and one-time redemption constraints (1032.5665ms)
+✔ password verification and authenticated encryption reject tampering (102.8977ms)
+✔ campaign validation rejects negative price, XSS, long text and invalid slot (7.1195ms)
+✔ mock is deterministic and unsupported claims are flagged (1.1846ms)
+✔ timezone offsets are normalized before time comparisons (1.4034ms)
+✔ model transport validates structured output and rejects unsupported claims (20.5786ms)
+✔ model deadline propagates without mutating source facts (10.5804ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 7
+ℹ fail 12
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2621.8416
+
+✖ failing tests:
+
+test at tests\api.test.ts:25:1
+✖ T01/T02: auth, tenant isolation on reads/writes/exports and staff permissions (206.4938ms)
+  [TypeError: fetch failed] {
+    [cause]: Error: connect EACCES 127.0.0.1:54661
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1864:16) {
+      errno: -4092,
+      code: 'EACCES',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 54661
+    }
+  }
+
+test at tests\api.test.ts:33:1
+✖ T03/T04: draft and paused links hidden; review required; AI never modifies campaign (160.5184ms)
+  [TypeError: fetch failed] {
+    [cause]: Error: connect EACCES 127.0.0.1:54663
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1864:16) {
+      errno: -4092,
+      code: 'EACCES',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 54663
+    }
+  }
+
+test at tests\api.test.ts:40:1
+✖ T05/T06/T11: final capacity concurrency, idempotency, cancellation and exact events (157.9852ms)
+  [TypeError: fetch failed] {
+    [cause]: Error: connect EACCES 127.0.0.1:54669
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1864:16) {
+      errno: -4092,
+      code: 'EACCES',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 54669
+    }
+  }
+
+test at tests\api.test.ts:49:1
+✖ T07/T08: coupon idempotency, per-browser quota, concurrent redemption and audit (139.317ms)
+  [TypeError: fetch failed] {
+    [cause]: Error: connect EACCES 127.0.0.1:54671
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1864:16) {
+      errno: -4092,
+      code: 'EACCES',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 54671
+    }
+  }
+
+test at tests\api.test.ts:57:1
+✖ total coupon limit and expired/paused campaigns reject new actions (141.6156ms)
+  [TypeError: fetch failed] {
+    [cause]: Error: connect EACCES 127.0.0.1:54673
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1864:16) {
+      errno: -4092,
+      code: 'EACCES',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 54673
+    }
+  }
+
+test at tests\api.test.ts:62:1
+✖ T09: validation, consent, extra tenant injection and body limits (147.5314ms)
+  [TypeError: fetch failed] {
+    [cause]: Error: connect EACCES 127.0.0.1:54675
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1864:16) {
+      errno: -4092,
+      code: 'EACCES',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 54675
+    }
+  }
+
+test at tests\api.test.ts:67:1
+✖ T10: unavailable AI keeps manual creation and reviewed publication working (141.3315ms)
+  [TypeError: fetch failed] {
+    [cause]: Error: connect EACCES 127.0.0.1:54677
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1864:16) {
+      errno: -4092,
+      code: 'EACCES',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 54677
+    }
+  }
+
+test at tests\api.test.ts:70:1
+✖ T12: privacy credentials authorize only subject data; deletion frees capacity (140.5294ms)
+  [TypeError: fetch failed] {
+    [cause]: Error: connect EACCES 127.0.0.1:54679
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1864:16) {
+      errno: -4092,
+      code: 'EACCES',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 54679
+    }
+  }
+
+test at tests\api.test.ts:78:1
+✖ share attribution and deduplication preserve unknown sources (136.0444ms)
+  [TypeError: fetch failed] {
+    [cause]: Error: connect EACCES 127.0.0.1:54682
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1864:16) {
+      errno: -4092,
+      code: 'EACCES',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 54682
+    }
+  }
+
+test at tests\api.test.ts:81:1
+✖ session CSRF and brute-force protection reject unsafe operations (141.1406ms)
+  [TypeError: fetch failed] {
+    [cause]: Error: connect EACCES 127.0.0.1:54684
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1864:16) {
+      errno: -4092,
+      code: 'EACCES',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 54684
+    }
+  }
+
+test at tests\api.test.ts:84:1
+✖ asset uploads enforce owner, file validity, rights, CSRF and tenant ownership (136.5589ms)
+  [TypeError: fetch failed] {
+    [cause]: Error: connect EACCES 127.0.0.1:54687
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1864:16) {
+      errno: -4092,
+      code: 'EACCES',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 54687
+    }
+  }
+
+test at tests\concurrency.test.ts:10:1
+✖ independent API processes share database capacity and one-time redemption constraints (1032.5665ms)
+  [TypeError: fetch failed] {
+    [cause]: Error: connect EACCES 127.0.0.1:54666
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1864:16) {
+      errno: -4092,
+      code: 'EACCES',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 54666
+    }
+  }

@@ -1,0 +1,22 @@
+
+> amyrtle-growth@0.1.0 test:e2e
+> playwright test
+
+
+Running 7 tests using 1 worker
+
+  ok 1 tests\e2e\flows.spec.ts:8:1 › unauthenticated management routes redirect and landing renders (1.0s)
+  ok 2 tests\e2e\flows.spec.ts:9:1 › merchant creates, manually reviews, publishes and shares a campaign (1.7s)
+  ok 3 tests\e2e\flows.spec.ts:14:1 › 375px photography visitor submits, owner confirms, and privacy delete executes (1.8s)
+  ok 4 tests\e2e\flows.spec.ts:19:1 › 375px food visitor claims and staff redeems only once (1.6s)
+  ok 5 tests\e2e\flows.spec.ts:23:1 › mobile merchant navigation, editor, store and analytics fit 375px (1.4s)
+  ok 6 tests\e2e\flows.spec.ts:26:1 › admin can provision an isolated merchant without accessing leads (806ms)
+  ok 7 tests\e2e\flows.spec.ts:30:1 › essential public pages and merchant dashboard pass automated accessibility checks (2.7s)
+
+  7 passed (15.1s)
+[WebServer] (node:13224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12592) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:10552) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

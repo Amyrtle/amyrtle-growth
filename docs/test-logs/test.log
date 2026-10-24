@@ -1,0 +1,31 @@
+
+> amyrtle-growth@0.1.0 test
+> tsx --test tests/*.test.ts
+
+✔ T01/T02: auth, tenant isolation on reads/writes/exports and staff permissions (505.3044ms)
+✔ T03/T04: draft and paused links hidden; review required; AI never modifies campaign (236.9466ms)
+✔ T05/T06/T11: final capacity concurrency, idempotency, cancellation and exact events (249.1296ms)
+✔ T07/T08: coupon idempotency, per-browser quota, concurrent redemption and audit (389.9793ms)
+✔ total coupon limit and expired/paused campaigns reject new actions (213.5689ms)
+✔ T09: validation, consent, extra tenant injection and body limits (282.358ms)
+✔ T10: unavailable AI keeps manual creation and reviewed publication working (185.4294ms)
+✔ T12: privacy credentials authorize only subject data; deletion frees capacity (265.1601ms)
+✔ T14: consistent SQLite backup recovers data and integrity after mutation (143.1897ms)
+✔ share attribution and deduplication preserve unknown sources (232.0668ms)
+✔ session CSRF and brute-force protection reject unsafe operations (463.7751ms)
+✔ asset uploads enforce owner, file validity, rights, CSRF and tenant ownership (375.02ms)
+✔ independent API processes share database capacity and one-time redemption constraints (833.9333ms)
+✔ password verification and authenticated encryption reject tampering (84.8451ms)
+✔ campaign validation rejects negative price, XSS, long text and invalid slot (6.3806ms)
+✔ mock is deterministic and unsupported claims are flagged (1.2314ms)
+✔ timezone offsets are normalized before time comparisons (0.3298ms)
+✔ model transport validates structured output and rejects unsupported claims (19.214ms)
+✔ model deadline propagates without mutating source facts (11.7597ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4049.7547
