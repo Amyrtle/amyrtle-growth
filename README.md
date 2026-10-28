@@ -2,6 +2,8 @@
 
 摄影预约 × 餐饮领券核销的本地可运行 MVP。技术栈为 Node.js 24、React 19、TypeScript、Vite、Express 5 和 SQLite；已包含前后端、持久化数据、安全控制、测试和运维脚本。
 
+开源仓库：[Amyrtle/amyrtle-growth](https://github.com/Amyrtle/amyrtle-growth)，采用 [MIT License](LICENSE)。公开源码与运行方式见 [GitHub 交付说明](docs/GITHUB.md)，持续集成入口为 [GitHub Actions](https://github.com/Amyrtle/amyrtle-growth/actions/workflows/ci.yml)。
+
 当前交付是本地演示与试点准备版本。CloudBase、云数据库 RLS、真实模型调用和实际商用尚未验证，也没有公开上线。
 
 ## 启动
@@ -39,7 +41,7 @@ npm start
 
 ## 验证与文档
 
-执行 `npm run verify` 可运行检查、构建、浏览器测试及运维演练；浏览器测试默认使用本机 Microsoft Edge（Playwright `channel: msedge`），需要安装 Edge。最终结果、环境和局限见 [测试报告](docs/TEST_REPORT.md)，截图位于 `docs/screenshots/`。
+执行 `npm run verify` 可运行检查、构建、浏览器测试及运维演练。Windows 默认使用本机 Microsoft Edge；其他平台使用 Playwright Chromium，首次运行前执行 `npx playwright install --with-deps chromium`。可用 `PLAYWRIGHT_CHANNEL` 指定已安装的浏览器。最终结果、环境和局限见 [测试报告](docs/TEST_REPORT.md)，截图位于 `docs/screenshots/`。
 
 | 文档 | 用途 |
 | --- | --- |

@@ -4,6 +4,11 @@ dist/
 .env.*
 !.env.example
 .local/
+.cloudbase/
+coverage/
+*.sqlite
+*.sqlite-*
+*.db
 test-results/
 playwright-report/
 *.log

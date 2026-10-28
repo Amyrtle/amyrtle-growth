@@ -1,0 +1,33 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      CI: "true"
+      PLAYWRIGHT_CHANNEL: chromium
+      AI_PROVIDER: mock
+      ALLOW_EXTERNAL_AI: "false"
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run verify
+      - uses: actions/upload-artifact@v7.0.2
+        if: failure()
+        with:
+          name: verification-diagnostics
+          path: |
+            docs/test-logs/
+            playwright-report/
+            test-results/
+          retention-days: 7
